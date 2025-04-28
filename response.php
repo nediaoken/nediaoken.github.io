@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-purple-800 to-purple-600 text-white">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold">Portfolio</span>
+                <div class="space-x-8">
+                    <a href="#skills" class="hover:text-purple-200 transition">Skills</a>
+                    <a href="#projects" class="hover:text-purple-200 transition">Projects</a>
+                    <a href="#contact" class="hover:text-purple-200 transition">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <h1 class="text-5xl md:text-7xl font-bold text-center mb-8">Backend Developer</h1>
+            <p class="text-xl md:text-2xl text-center max-w-3xl mx-auto text-purple-100">Building robust and scalable solutions for modern web applications</p>
+        </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-16">Technical Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Backend Development</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">Node.js</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">Python</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Database Systems</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">MongoDB</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">DevOps & Tools</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">Docker</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">Git/GitHub</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                            <span class="text-gray-700">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-16">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">PawBandit Gaming Platform</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            A sophisticated gaming platform featuring tournament management, real-time matchmaking, and advanced player statistics tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">MongoDB</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tournament API</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            High-performance RESTful API powering competitive gaming tournaments with real-time updates and secure authentication.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Express.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">JWT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">Let's Connect</h2>
+                <p class="text-gray-600 mb-12 text-lg">Interested in collaboration? I'm always open to discussing new projects and opportunities.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:your.email@example.com" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition duration-150 ease-in-out">
+                        Email Me
+                    </a>
+                    <a href="https://github.com/yourusername" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 rounded-lg transition duration-150 ease-in-out">
+                        GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 Backend Developer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
