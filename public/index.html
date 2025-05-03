@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Pawbandit - TESTPAGE</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script>
+  function toggleMenu() {
+    getElement("mobile-menu").classList.toggle("hidden")
+  }
+
+  function getElement(element) {
+    return document.getElementById(element)
+  }
+</script>
+
+<body class="antialiased">
+  <main>
+    <header>
+      <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-900">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          <a href="https://pawbandit.com" class="flex items-center">
+            <img src="./pawbanditdashboard/public/assets/images/layouts/pawbandit-logo.png" class="mr-3 h-8" alt="Pawbandit Logo" />
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Pawbandit</span>
+          </a>
+          <div class="flex items-center lg:order-2">
+            <button onclick="toggleMenu()" data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              </svg>
+              <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
+            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center h-[70vh]">
+      <div class="absolute top-0 w-full h-full bg-center bg-cover bg-purple-900">
+        <span id="blackOverlay" class="w-full h-full absolute opacity-80 bg-black"></span>
+      </div>
+      <div class="container relative mx-auto">
+
+        <div class="items-center flex flex-wrap">
+          <div class="w-full lg:w-1/4 px-4 ml-auto mr-auto text-center">
+            <div class="inline-block justify-center space-y-12 text-gray-200 text-center font-bold">
+
+
+              <h1 class="text-5xl">
+                Welkom
+              </h1>
+
+              <p class="text-lg">
+                Hiya! Ik ben Aiden Visser, een enthousiaste junior webontwikkelaar met een passie voor het creëren
+                van boeiende en gebruiksvriendelijke applicaties.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="h-32 top-auto -bottom-1 left-0 right-0 w-full absolute pointer-events-none overflow-hidden">
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0">
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+
+    <section class="pt-20 pb-48 bg-gray-300">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center mb-24">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold">Latest projects</h2>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <h2 class="text-2xl font-bold">Coming soon</h2>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      © 2023
+
+      <a href="https://pawbandit.com/" class="hover:underline">
+        Pawbandit
+      </a>™.
+
+      All Rights Reserved.
+    </span>
+
+  </footer>
+</body>
+
+</html>
