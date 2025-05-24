@@ -34,11 +34,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Class</th>
-                                    <th>Section</th>
-                                    <th>Action</th>
+                                    <th>Name</th>
                                 </tr>
                             </thead>
                             <tbody class="studentdata">
@@ -60,36 +56,23 @@
 
     <script>
         $(document).ready(function () {
-            getdata();
+            const results = getdata();
+            $(".message-show").html(results)
         });
 
-        function getdata()
+        async function getdata()
         {
-            $.ajax({
+            return $.ajax({
                 type: "GET",
-                url: "fetch.php",
-                success: function (response) {
+                url: "index.php",
+                
+                success: function (response) { return response },
 
-                    // console.log(response);
-                    $.each(response, function (key, value) { 
-                        // console.log(value['fname']);
-                        $('.studentdata').append('<tr>'+
-                                '<td class="stud_id">'+value['id']+'</td>\
-                                <td>'+value['fname']+'</td>\
-                                <td>'+value['lname']+'</td>\
-                                <td>'+value['class']+'</td>\
-                                <td>'+value['section']+'</td>\
-                                <td>\
-                                    <a href="#" class="badge btn-info viewbtn">VIEW</a>\
-                                    <a href="#" class="badge btn-primary edit_btn">EDIT</a>\
-                                    <a href="" class="badge btn-danger">Delete</a>\
-                                </td>\
-                            </tr>');
-                    });
+                error: (e) => {
+                    return e
                 }
             });
         }
-
     </script>
 
   </body>
