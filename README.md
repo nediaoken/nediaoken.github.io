@@ -13,9 +13,6 @@ A GitHub Pages site hosting a variety of games, web experiments, and project dem
 ## 🔗 Related Links
 Main Dashboard: https://Pawbandit.com
 
-Project Hosting: https://nediaoken.github.io
+Project & Hosting: https://nediaoken.github.io
 
 GitHub Profile: https://github.com/nediaoken
-
-## 📬 Contact
-Feel free to reach out via GitHub Issues if you have feedback, suggestions, or run into any issues.
