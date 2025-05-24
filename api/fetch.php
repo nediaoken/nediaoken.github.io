@@ -1,8 +1,8 @@
 <?php 
 
-$conn = mysqli_connect("192.168.2.69", "nediaoken", "SchattigeWasberen", "pokemon");
+$conn = mysqli_connect("mysqli.pawbandit.com", "nediaoken", "SchattigeWasberen", "pokemon");
 
-$query = "SELECT * FROM pokemon";
+$query = "SELECT * FROM pokemon LIMIT 5";
 $query_run = mysqli_query($conn, $query);
 $result_array = [];
 
@@ -14,8 +14,8 @@ if(mysqli_num_rows($query_run) > 0)
     {
         array_push($result_array, $row);
     }
-    header('Content-type: application/json');
-    echo json_encode($result_array);
+   // header('Content-type: application/json');
+    return json_encode($result_array);
 }
 else
 {
