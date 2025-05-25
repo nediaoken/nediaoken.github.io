@@ -52,8 +52,8 @@
             for(let result of results) {
                 $("#resultdata").append(
                     "<tr>" +
-                        "<td>" + result['id'] + "</td>" +
-                        "<td>" + result['name'] + "</td>" +
+                        "<td>" + (result.id ?? " - " ) + "</td>" +
+                        "<td>" + (result.name ?? " - " ) + "</td>" +
                     "</tr>"
                 )
             }
