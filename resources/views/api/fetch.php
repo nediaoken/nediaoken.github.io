@@ -1,6 +1,6 @@
 <?php
     header("Access-Control-Allow-Origin: *"); // Allow requests from any origin
-    header("Content-Type: json");
+    header("Content-Type: application/json");
 
     // Database connection
     $host = "myqli.pawbandit.com";
@@ -27,7 +27,7 @@
         }
     }
 
-    echo json_encode($users);
+    return json_encode($users);
 
     $conn->close();
 ?>

@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>PHP - AJAX - CRUD</title>
+    <title>Pawbandit - API</title>
 
 </head>
 <body>
@@ -17,18 +17,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4>
-                            PHP - AJAX - CRUD | Data without page reload using jquery ajax in php.
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#Student_AddModal">
-                                Add
-                            </button>
-                        </h4>
-                    </div>
                     <div class="card-body">
-                        <div class="message-show">
-
-                        </div>
+                        <div class="message-show"></div>
 
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -37,9 +27,8 @@
                                     <th>Name</th>
                                 </tr>
                             </thead>
-                            <tbody class="studentdata">
-                                
-                            </tbody>
+
+                            <tbody id="resultdata"></tbody>
                         </table>
                     </div>
                 </div>
@@ -55,9 +44,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready(function () {
-            const results = getdata();
-            $(".message-show").html(results)
+        $(document).ready(async function () {
+            const results = await getdata();
+
+            for(let result of results) {
+                $("#resultdata").append(
+                    "<tr>" +
+                        "<td>" + result.id + "</td>" +
+                        "<td>" + result.name + "</td>" +
+                    "</tr>"
+                )
+            }
         });
 
         async function getdata()

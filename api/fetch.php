@@ -1,24 +1,33 @@
-<?php 
+<?php
+    header("Access-Control-Allow-Origin: *"); // Allow requests from any origin
+    header("Content-Type: application/json");
 
-$conn = mysqli_connect("mysqli.pawbandit.com", "nediaoken", "SchattigeWasberen", "pokemon");
+    // Database connection
+    $host = "myqli.pawbandit.com";
+    $db = 'pokemon';
+    $user = 'nediaoken';
+    $pass = 'SchattigeWasberen';
 
-$query = "SELECT * FROM pokemon LIMIT 5";
-$query_run = mysqli_query($conn, $query);
-$result_array = [];
+    $conn = new mysqli($host, $user, $pass, $db);
 
-echo $result_array;
-
-if(mysqli_num_rows($query_run) > 0)
-{
-    foreach($query_run as $row)
-    {
-        array_push($result_array, $row);
+    if ($conn->connect_error) {
+        http_response_code(500);
+        echo json_encode(["error" => "Database connection failed"]);
+        exit;
     }
-   // header('Content-type: application/json');
-    return json_encode($result_array);
-}
-else
-{
-    echo $return = "<h4>No Record Found</h4>";
-}
+
+    // Query all users
+    $sql = "SELECT * FROM pokemon LIMIT 5";
+    $result = $conn->query($sql);
+
+    $users = [];
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $users[] = $row;
+        }
+    }
+
+    echo json_encode($users);
+
+    $conn->close();
 ?>
