@@ -47,14 +47,15 @@
         $(document).ready(async function () {
             const results = JSON.parse(await getdata());
 
-            for(let result of results) {
+            $.each(results, (result) => {
+                console.log(result)
                 $("#resultdata").append(
                     "<tr>" +
                         "<td>" + (result.id ?? " - " ) + "</td>" +
                         "<td>" + (result.name ?? " - " ) + "</td>" +
                     "</tr>"
                 )
-            }
+            })
         });
 
         async function getdata()
