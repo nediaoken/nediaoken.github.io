@@ -1,6 +1,6 @@
 <?php
-    // header("Access-Control-Allow-Origin: *"); // Allow requests from any origin
-    // header("Content-Type: application/json");
+    header("Access-Control-Allow-Origin: *"); // Allow requests from any origin
+    header("Content-Type: application/json");
 
     // Database connection
     $host = "myqli.pawbandit.com";
@@ -18,8 +18,16 @@
 
     // Query all users
     $sql = "SELECT * FROM pokemon LIMIT 5";
-    $result = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
-    echo json_encode($result);
+    $result = $conn->query($sql);
+
+    $users = [];
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $users[] = $row;
+        }
+    }
+
+    echo json_encode($users);
 
     $conn->close();
 ?>
