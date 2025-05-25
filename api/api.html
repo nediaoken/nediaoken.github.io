@@ -45,9 +45,7 @@
 
     <script>
         $(document).ready(async function () {
-            const results = await getdata();
-
-            console.dir(results)
+            const results = JSON.parse(await getdata());
 
             for(let result of results) {
                 $("#resultdata").append(
