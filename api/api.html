@@ -47,7 +47,7 @@
         $(document).ready(async function () {
             const results = await getdata();
 
-            console.log(results)
+            console.dir(results)
 
             for(let result of results) {
                 $("#resultdata").append(
