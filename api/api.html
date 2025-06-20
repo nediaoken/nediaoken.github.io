@@ -44,19 +44,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready(async function () {
-            const results = JSON.parse(await getdata());
+        async function handleData () {
+            const results = await getdata();
 
-            $.each(results, (result) => {
-                console.log(result)
-                $("#resultdata").append(
-                    "<tr>" +
-                        "<td>" + (result.id ?? " - " ) + "</td>" +
-                        "<td>" + (result.name ?? " - " ) + "</td>" +
-                    "</tr>"
-                )
-            })
-        });
+            console.log(results)
+
+            for(let result in results) {
+                console.log(results[result])
+            }
+
+                // $("#resultdata").append(
+                //     "<tr>" +
+                //         "<td>" + (result.id ?? " - " ) + "</td>" +
+                //         "<td>" + (result.name ?? " - " ) + "</td>" +
+                //     "</tr>"
+                // )
+            // })
+        }
 
         async function getdata()
         {
@@ -64,13 +68,17 @@
                 type: "GET",
                 url: "fetch.php",
                 
-                success: function (response) { return response },
+                success: function (response) { 
+                    return response
+                },
 
                 error: (e) => {
                     return e
                 }
-            });
+            })
         }
+
+        handleData()
     </script>
 
   </body>

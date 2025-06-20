@@ -1,4 +1,4 @@
-<IfModule mod_rewrite.c>
+<!-- <IfModule mod_rewrite.c>
     RewriteEngine On
 
     # Stop processing if already in the /public directory
@@ -10,4 +10,4 @@
 
     # Route all other requests
     # <!-- RewriteRule (.*) index.html?route=$1 [L,QSA] -->
-</IfModule>
+<!-- </IfModule> -->
