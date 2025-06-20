@@ -47,28 +47,24 @@
         async function handleData () {
             const results = await getdata();
 
-            console.log(results)
-
-            for(let result in results) {
-                console.log(results[result])
-            }
-
-                // $("#resultdata").append(
-                //     "<tr>" +
-                //         "<td>" + (result.id ?? " - " ) + "</td>" +
-                //         "<td>" + (result.name ?? " - " ) + "</td>" +
-                //     "</tr>"
-                // )
-            // })
-        }
+            $.each(results, (result) => {
+                console.log(result)
+                $("#resultdata").append(
+                    "<tr>" +
+                        "<td>" + result.id + "</td>" +
+                        "<td>" + result.name + "</td>" +
+                    "</tr>"
+                )
+            })
+        });
 
         async function getdata()
         {
             return $.ajax({
                 type: "GET",
                 url: "fetch.php",
-                
-                success: function (response) { 
+
+                success: function (response) {
                     return response
                 },
 
