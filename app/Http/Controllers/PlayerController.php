@@ -10,7 +10,9 @@
     class PlayerController extends Controller
     {
         public function index() {
-            $players = Player::with('characters.character')->get();
+            $players = Player::with('characters.character', 'matches')->get();
+
+            dd($players[2]->name, $players[2]->worstMatchup);
 
             return Inertia::render('players/index', compact('players'));
         }

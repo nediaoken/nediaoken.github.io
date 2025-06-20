@@ -51,6 +51,8 @@ export interface Player {
     is_spr?: boolean;
     active?: boolean;
     main?: Character;
+    wins: number;
+    loses: number;
 }
 
 export interface Character {
