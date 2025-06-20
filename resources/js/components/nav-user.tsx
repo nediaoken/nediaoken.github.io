@@ -4,7 +4,7 @@ import { UserInfo } from '@/components/user-info';
 import { UserMenuContent } from '@/components/user-menu-content';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { type SharedData } from '@/types';
-import { usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import { ChevronsUpDown } from 'lucide-react';
 
 export function NavUser() {
@@ -12,7 +12,7 @@ export function NavUser() {
     const { state } = useSidebar();
     const isMobile = useIsMobile();
 
-    return (
+    return auth.user !== null ? (
         <SidebarMenu>
             <SidebarMenuItem>
                 <DropdownMenu>
@@ -22,15 +22,14 @@ export function NavUser() {
                             <ChevronsUpDown className="ml-auto size-4" />
                         </SidebarMenuButton>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                        className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
-                        align="end"
-                        side={isMobile ? 'bottom' : state === 'collapsed' ? 'left' : 'bottom'}
-                    >
+
+                    <DropdownMenuContent className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg" align="end" side={isMobile ? 'bottom' : state === 'collapsed' ? 'left' : 'bottom'}>
                         <UserMenuContent user={auth.user} />
                     </DropdownMenuContent>
                 </DropdownMenu>
             </SidebarMenuItem>
         </SidebarMenu>
+    ) : (
+        <div><Link href={ route('login') }>Login</Link></div>
     );
 }

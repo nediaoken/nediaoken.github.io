@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Player } from '@/types';
+import { Info } from 'lucide-react';
 import * as React from 'react';
 
 interface PlayerDialogProps {
@@ -9,26 +10,13 @@ interface PlayerDialogProps {
 export default function DialogPlayerInfo({ player }: PlayerDialogProps) {
     const [infoOpen, setInfoOpen] = React.useState<boolean>(false);
 
-    console.log(player)
-
-    const getMainCharacter = () => {
-        // player.main = player?.characters?.filter( (character) => character.is_main )[0].character;
-        return player?.characters[0]
-    }
-
-    if(infoOpen) {
-        console.log(player)
-        console.log(getMainCharacter());
-    }
-
-
     return (
         <Dialog open={ infoOpen } onOpenChange={ setInfoOpen }>
             <DialogTrigger asChild>
-                <p className="cursor-pointer">{ player.name }</p>
+                <Info />
             </DialogTrigger>
 
-            <DialogContent className="overflow-auto rounded-lg p-6 shadow-lg w-7xl">
+            <DialogContent className="overflow-auto rounded-lg p-6 shadow-lg w-full">
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold">Player: {player.name}</DialogTitle>
                 </DialogHeader>
@@ -37,17 +25,18 @@ export default function DialogPlayerInfo({ player }: PlayerDialogProps) {
 
                 <div className="grid grid-cols-2 gap-4">
                     
-                    <div className='flex space-x-4 col-span-2'>
+                    <div className='flex items-center space-x-4 col-span-2'>
                         <p>Main Character</p>
-                        <p>{ getMainCharacter().name }</p>
+                        <img className="w-8 h-fit" src="assets/images/stock_icons/chara_2_brave_00.png" alt="" />
+                        {/* <p>{ getMainCharacter().name }</p> */}
                     </div>
 
                     <div className="grid grid-cols-2">
                         <p>Wins</p>
-                        <p>0</p>
+                        <p>{ player.wins }</p>
 
                         <p>Loses</p>
-                        <p>0</p>
+                        <p>{ player.loses }</p>
                     </div>
 
                     <div className="grid grid-cols-2">
